@@ -1,6 +1,6 @@
 import facedetecter, telebot, requests
 
-API_TOKEN = "BOT-TOKEN"
+API_TOKEN = "5609891205:AAFBuAVK-4RSqPIZSYWy0VLYjHT5w0sVc-U"
 bot = telebot.TeleBot(API_TOKEN)
 
 
@@ -16,6 +16,8 @@ def echo(msg):
     file = facedetecter.search_objects("photo.png")
     
     bot.send_photo(msg.chat.id, file, reply_to_message_id=msg.message_id)
+
+    file.close()
 
 if __name__ == "__main__":
     bot.infinity_polling()
